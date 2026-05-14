@@ -1,0 +1,134 @@
+DOC - PROTOTIPO DO JOGO v.1
+
+1 - Visão geral - História
+
+O jogador assume o papel de um ciclista socorrista numa missão de vida ou morte:
+transportar os seus próprios órgãos vitais numa mochila térmica para um transplante de
+urgência no hospital da cidade. O jogo é uma metáfora sobre a "corrida da vida", onde
+cada escolha (alimentação, vícios e exercício) afeta diretamente a qualidade dos órgãos
+que serão entregues. O objetivo é chegar ao hospital a tempo e com os órgãos num estado
+"Saudável".
+
+  ● Gênero: Corrida Infinita / Sobrevivência Educativa.
+  ● Estilo Visual: Pixel Art 16-bit (Inspirado em clássicos como Top Gear).
+  ● Plataforma: PC (Godot) + Controlador Físico (ESP32).
+
+Abaixo temos o link do repositório do jogo em construção no github:
+https://github.com/AnaLuizaS4ntos/Corrida_vital_v1
+
+2 - O jogo
+
+O jogo inicia com a Menu Principal [música de fundo 16-bit] contendo o logótipo retro
+"Corrida Vital" e os botões "Jogar" e "Sair". Ao clicar em jogar, a tela emite um efeito de
+flash e um som de carregamento de consola antiga.
+Uma Introdução Narrativa é exibida através de balões de fala, onde o personagem
+explica a urgência da entrega e os perigos do caminho. Após o tutorial rápido, surge o
+botão "Avançar" e a jogabilidade começa com o aviso "READY... GO!".
+Durante a Gameplay, o jogador controla a bicicleta num cenário urbano. No topo da tela,
+uma barra de "Vitalidade" mostra o estado de conservação dos órgãos.
+
+  ● Itens de Coleta: Frutas e garrafas de água [som: acerto] aumentam a energia e
+  velocidade.
+  ● Itens de Dano: Cigarros e hambúrgueres [som: erro] prejudicam o pulmão e o
+  coração, causando lentidão e ativando um efeito de "visão embaciada" (neblina
+  técnica).
+  ● Obstáculos: Buracos na estrada causam perda de pontos e diminuem a resistência
+  física.
+
+  ● Eventos Climáticos: Em certas partes, surge chuva e relâmpagos. Nestes
+  momentos, o hardware (ESP32) aumenta a frequência do batimento cardíaco
+  (Buzzer) para simular adrenalina, dificultando a visão dos itens.
+  ● Interações (NPCs): O ciclista encontrará pessoas no caminho que darão dicas
+  rápidas sobre saúde e incentivos para continuar.
+  No caso da Vitória (chegar ao hospital com >70% de saúde), surge uma tela de "Missão
+  Cumprida" com o ciclista em forma e um relatório médico positivo. No caso da Derrota
+  (saúde zerada ou órgãos debilitados), surge uma tela de Game Over mostrando o impacto
+  dos maus hábitos, com botões para "Tentar Novamente" ou "Menu Principal".
+
+3 - Experiência do Usuário (UX) e Fluxo de Telas
+
+  I. Tela Inicial: Estética retrô com trilha sonora de 8-bit. Botões de "Início" e "Créditos".
+  Ao iniciar, ocorre um efeito de glitch e flash de luz (estilo carregamento de cartucho).
+  II. Tutorial Narrativo: O personagem aparece em um balão de diálogo explicando:
+  "Meus órgãos estão nesta mochila! Preciso chegar ao hospital antes que meu tempo
+  acabe, mas meu corpo sente cada escolha que faço".
+  III. Gameplay: Perspectiva em terceira pessoa (atrás do ciclista). O jogador deve
+  desviar de obstáculos e coletar itens.
+  IV. Interações: NPCs aparecem lateralmente com balões de fala rápidos dando dicas
+  ("Beba água para recuperar o fôlego!", "A poluição vai dificultar sua visão!").
+
+4 - Mecânicas de Gameplay
+
+  4.1. Sistema de Vitalidade e Itens
+  A barra de Vitalidade não é apenas vida, mas o rendimento do ciclista.
+
+  ● Itens Positivos:
+    ○ Frutas, Água, Saladas: Recuperam a barra de vitalidade e aumentam a
+    velocidade base.
+  ● Itens Negativos:
+    ○ Cigarros: Causam dano direto ao "Pulmão" (indicado na UI) e aceleram o
+    batimento cardíaco no hardware.
+    ○ Hambúrgueres/Ultraprocessados: Causam lentidão imediata e ativam um
+    efeito de "visão embaçada" (Blur) na tela.
+    ○ Buracos/Obstáculos: Perda de pontos e Screen Shake (tremor de tela).
+    ○ Bebida Alcoólica: Dificuldade nos movimentos e visão embaçada.
+
+  4.2. Efeitos Climáticos e Adrenalina
+    ● Chuva e Raios: Em fases avançadas, a visibilidade diminui. Relâmpagos revelam a
+    pista por milissegundos.
+    ● Neblina de Saúde: Se a vitalidade cair abaixo de 40%, uma neblina visual cobre a
+    tela, simulando tontura e fadiga.
+
+5 - Integração com Hardware (ESP32)
+
+  O hardware atua como um sistema de Biofeedback conectado via comunicação Serial:
+  ● Buzzer: Emite o som de batimentos cardíacos. O ritmo (BPM) acelera em momentos
+  de perigo (chuva/baixa saúde) e desacelera quando o jogador consome itens
+  saudáveis. Se a vitalidade zerar, o som se torna um tom contínuo (Flatline).
+  ● LEDs de Status: Um LED RGB ou conjunto de LEDs que mudam de Verde (Saudável)
+  para Vermelho (Crítico) conforme a barra de Vitalidade na Godot.
+  ● Controles Físicos: Botões no protoboard para comandos de "Esquiva" e um botão
+  especial de "Respiração" para estabilizar o personagem em momentos de neblina.
+
+6 - Planejamento de recursos
+
+Arte Programação
+Logótipo: Estilo pixel art 16-bit Menu: Lógica de botões e transição de
+  flash
+Sprites: Ciclista (Normal, Cansado, Dano) Movimentação: Lógica de aceleração da
+  bike
+Itens: Fruta, Água, Hambúrguer, Cigarro,
+  Buraco
+Sistema de Saúde: Cálculo de vitalidade
+  dinâmica
+Cenário: Cidade com parallax, Hospital Interface (UI): Balões de diálogo e HUD
+Efeitos: Chuva, Neblina, Flash de
+  Relâmpago
+Comunicação Serial: Godot ↔ ESP32
+Tela Final: Gráficos de "Saudável vs
+  Debilitado"
+Cálculo Final: Percentagem de itens
+  saudáveis
+Áudio Hardware (ESP32)
+Música: Estilo retro/arcade acelerado Buzzer: Som de batimento cardíaco (ritmo
+  variável)
+Som: Coleta de itens (positivo/negativo) LEDs: Piscar em sincronia com o
+  batimento
+Som: Trovão e som ambiente de chuva Botões: Comandos de desvio e
+  "respiração"
+Som: Alarme de hospital (Flatline em caso
+  de perda)
+Serial: Receção de dados de
+  dano/adrenalina
+
+7 - Conclusão e Objetivo Pedagógico
+
+Ao chegar ao hospital, o jogo apresenta a Tela de Diagnóstico Final:
+  ● Cálculo de Sucesso: Baseado na porcentagem de itens saudáveis coletados vs.
+  danos sofridos.
+  ● Feedback Visual: Exibe o "Ciclista Atleta" (entrega concluída com sucesso) ou o
+  "Ciclista Debilitado" (órgãos comprometidos).
+  ● Mensagem Final: Incentivo à prática de exercícios físicos regulares (academia, bike,
+  vôlei, etc), redução do sedentarismo e Digital Detox (menos tempo de tela/celular). O
+  jogo reforça que cuidar da saúde é a corrida mais importante que corremos todos
+  os dias.
