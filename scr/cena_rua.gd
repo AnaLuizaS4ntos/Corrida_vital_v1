@@ -39,34 +39,32 @@ func _ready() -> void:
 		lines[i].z = i * seg + 0.00000001
 		
 	num = lines.size()
+	
+func _draw_road(color: Color, x1: float, y1: float, w1: float, x2: float, y2: float, w2: float) -> void:
+	# Definindo os 4 pontos do trapézio (A, B, C, D)
+	var a = Vector2(x1 - w1, y1)
+	var b = Vector2(x2 - w2, y2)
+	var c = Vector2(x2 + w2, y2)
+	var d = Vector2(x1 + w1, y1)
+	
+	var points = PackedVector2Array([a, b, c, d])
+	
+	draw_colored_polygon(points, color)
+
+func _line(line, cam_x, cam_y, cam_z):
+	line.scale = cam / (line.z - cam_z)
+	line.X= (1+ line.scale * (line.x - cam_x)) * width /2
+	line.Y = (1- line.scale * (line.y - cam_y)) * heigth /2
+	line.W = line.scale * road_width * (width/2)
+	return line
+	
 
 
-#desenhando a pista
-func _draw():
-	# Loop que desenha os segmentos de trás para frente (horizonte para baixo)
-	var start_pos = pos / seg
-	
-	for i in range(1, 300): # Desenha 300 segmentos à frente
-		var curr = lines[(start_pos + i) % num]
-		var prev = lines[(start_pos + i - 1) % num]
-		
-		# Determina se o segmento é claro ou escuro para o efeito de "zebra"
-		var is_dark = (start_pos + i) % 6 < 3
-		var grass_color = color["grass-dark"] if is_dark else color["grass_light"]
-		var road_color = color["road_dark"] if is_dark else color["border_ligth"] # Ajuste as cores conforme preferir
-		
-		# Desenha a Grama (Fundo)
-		draw_rect(Rect2(0, prev.Y, width, curr.Y - prev.Y), grass_color)
-		
-		# Desenha a Pista (Trapézio)
-		var points = PackedVector2Array([
-			Vector2(prev.X - prev.W, prev.Y), # A
-			Vector2(prev.X + prev.W, prev.Y), # B
-			Vector2(curr.X + curr.W, curr.Y), # C
-			Vector2(curr.X - curr.W, curr.Y)  # D
-		])
-		draw_colored_polygon(points, road_color)
-	
+
+func _draw() -> void:
+	# Chamando a função igualzinho ao seu tutorial
+	# Color.RED (em maiúsculas no Godot 4) ou Color(1, 0, 0)
+	_draw_road(Color.RED, 512, 400, 200, 512, 200, 50)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
