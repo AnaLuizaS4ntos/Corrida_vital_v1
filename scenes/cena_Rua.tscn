@@ -5,7 +5,7 @@
 [node name="Pseudo_3D" type="Node2D" unique_id=711295868]
 
 [node name="CapturaDeTela20260514150802" type="Sprite2D" parent="." unique_id=1609014180]
-position = Vector2(-25, -48)
+position = Vector2(-68, -64)
 scale = Vector2(1.0211641, 1.0211641)
 texture = ExtResource("1_jfhvc")
 centered = false
