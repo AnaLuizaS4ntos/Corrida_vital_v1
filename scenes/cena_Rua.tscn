@@ -2,13 +2,48 @@
 
 [ext_resource type="Script" uid="uid://dl2otafkeoyte" path="res://scr/cena_rua.gd" id="1_gpi17"]
 [ext_resource type="Texture2D" uid="uid://j3c106oa70si" path="res://assets/Captura de tela 2026-05-15 012241.png" id="1_jfhvc"]
+[ext_resource type="Texture2D" uid="uid://x78ngnooahto" path="res://assets/player/sprite 1 (2).png" id="3_lrpq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r528x"]
+atlas = ExtResource("3_lrpq3")
+region = Rect2(0, 0, 768, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x48ou"]
+atlas = ExtResource("3_lrpq3")
+region = Rect2(0, 768, 768, 768)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hausg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r528x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x48ou")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [node name="Pseudo_3D" type="Node2D" unique_id=711295868]
 script = ExtResource("1_gpi17")
 
 [node name="CapturaDeTela20260515012241" type="Sprite2D" parent="." unique_id=211943993]
+position = Vector2(-63.000008, 0)
 scale = Vector2(0.9786097, 0.9786096)
 texture = ExtResource("1_jfhvc")
 centered = false
 region_enabled = true
 region_rect = Rect2(0.635, 2.145, 1176, 374)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2132593076]
+position = Vector2(510, 488.99997)
+scale = Vector2(0.22265622, 0.22265622)
+sprite_frames = SubResource("SpriteFrames_hausg")
+animation = &"up"
+
+[node name="Sprite1(2)" type="Sprite2D" parent="." unique_id=620600456]
+visible = false
+position = Vector2(-250, 176)
+texture = ExtResource("3_lrpq3")
