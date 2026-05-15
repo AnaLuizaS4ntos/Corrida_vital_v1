@@ -5,10 +5,10 @@ extends Node2D
 var color := {
 	"grass_dark" :Color(0.22, 0.447, 0.0, 1.0),
 	"grass_light" :Color(0.179, 0.6, 0.0, 1.0),
-	"border_dark" :Color(1.0, 0.0, 0.0, 1.0),
-	"border_light" :Color(0.42, 0.42, 0.42),
+	"border_dark" :Color(0.094, 0.093, 0.255, 1.0),
+	"border_light" :Color(0.177, 0.171, 0.379, 1.0),
 	"road_dark" :Color(0.4, 0.4, 0.4),
-	"strip_dark" :Color(0.666, 0.132, 0.0, 1.0),
+	"strip_dark" :Color(0.667, 0.133, 0.0, 0.0),
 	"strip_light" :Color(1, 1, 1),
 	"road_light" :Color(0.343, 0.339, 0.352, 1.0)
 }
@@ -36,10 +36,20 @@ var direction := 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(road_length):
-		# Use px, py, pw aqui também para ficar tudo padrão
+		# px, py, pw 
 		lines.append({x=0, y=0, z=0, px=0, py=0, pw=0, scale = 0, curve = 0})
 		lines[i].z = i * seg + 0.00000001
+		
+		if i > 300 and i < 700: lines[i].curve = 0.5
+		if i > 800 and i < 1200: lines[i].curve = -0.7
+		
 	num = lines.size()
+	
+func _process(delta: float) -> void:
+	queue_redraw()
+	
+	direction = Input.get_axis("ui_down","ui_up")
+	pos += seg * direction
 	
 func _draw_road(color: Color, x1: float, y1: float, w1: float, x2: float, y2: float, w2: float) -> void:
 	# Definindo os 4 pontos do trapézio (A, B, C, D)
@@ -111,6 +121,9 @@ func _draw() -> void:
 		var grass  = color["grass_dark"]  if (int(n / 8) % 2) else color["grass_light"]
 		var strip  = color["strip_dark"]  if (int(n / 8) % 2) else color["strip_light"]
 		 
+		_draw_road(grass, 0, p.py, width, 0, l.py, width)
+		_draw_road(border, p.px, p.py, p.pw*1.2, l.px, l.py, l.pw * 1.2)
+		_draw_road(road_col, p.px, p.py, p.pw, l.px, l.py, l.pw)
+		_draw_road(strip, p.px, p.py, p.pw*0.01, l.px, l.py, l.pw * 0.01)
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

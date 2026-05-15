@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c031y7yi61u4n"]
+
+[ext_resource type="Script" uid="uid://dl2otafkeoyte" path="res://scr/cena_rua.gd" id="1_gpi17"]
+[ext_resource type="Texture2D" uid="uid://j3c106oa70si" path="res://assets/Captura de tela 2026-05-15 012241.png" id="1_jfhvc"]
+
+[node name="Pseudo_3D" type="Node2D" unique_id=711295868]
+script = ExtResource("1_gpi17")
+
+[node name="CapturaDeTela20260515012241" type="Sprite2D" parent="." unique_id=211943993]
+scale = Vector2(0.9786097, 0.9786096)
+texture = ExtResource("1_jfhvc")
+centered = false
+region_enabled = true
+region_rect = Rect2(0.635, 2.145, 1176, 374)
