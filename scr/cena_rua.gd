@@ -42,6 +42,7 @@ func _ready() -> void:
 		
 		if i > 300 and i < 700: lines[i].curve = 0.5
 		if i > 800 and i < 1200: lines[i].curve = -0.7
+		if i < 755: lines[i].y = sin(i/30.0) *600
 		
 	num = lines.size()
 	
@@ -81,7 +82,7 @@ func _draw() -> void:
 		
 	var num_pos = 0
 	var start_point = int(pos / seg)
-	var cam_h = 1500 + lines[start_point % num].y
+	var cam_h = 1000 + lines[start_point % num].y
 	var cutoff = heigth
 	var x = 0.0
 	var dx = 0.0
