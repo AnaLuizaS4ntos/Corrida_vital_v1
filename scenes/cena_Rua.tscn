@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://c031y7yi61u4n"]
 
-[node name="Node2D" type="Node2D" unique_id=711295868]
+[ext_resource type="Texture2D" uid="uid://c1otvaybuq8lr" path="res://assets/Captura de tela 2026-05-14 150802.png" id="1_jfhvc"]
+
+[node name="Pseudo_3D" type="Node2D" unique_id=711295868]
+
+[node name="CapturaDeTela20260514150802" type="Sprite2D" parent="." unique_id=1609014180]
+position = Vector2(-25, -48)
+scale = Vector2(1.0211641, 1.0211641)
+texture = ExtResource("1_jfhvc")
+centered = false
