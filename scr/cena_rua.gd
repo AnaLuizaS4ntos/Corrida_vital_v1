@@ -41,7 +41,7 @@ func _ready() -> void:
 	num = lines.size()
 	
 func _draw_road(color: Color, x1: float, y1: float, w1: float, x2: float, y2: float, w2: float) -> void:
-	# Definindo os 4 pontos do trapézio (A, B, C, D)
+	#definindo os 4 pontos do trapézio (A, B, C, D)
 	var a = Vector2(x1 - w1, y1)
 	var b = Vector2(x2 - w2, y2)
 	var c = Vector2(x2 + w2, y2)
@@ -62,8 +62,6 @@ func _line(line, cam_x, cam_y, cam_z):
 
 
 func _draw() -> void:
-	# Chamando a função igualzinho ao seu tutorial
-	# Color.RED (em maiúsculas no Godot 4) ou Color(1, 0, 0)
 	_draw_road(Color.RED, 512, 400, 200, 512, 200, 50)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
