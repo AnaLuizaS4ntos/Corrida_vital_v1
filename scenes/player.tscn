@@ -32,4 +32,5 @@ script = ExtResource("1_g2els")
 position = Vector2(510, 477)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_dqkch")
+autoplay = "default"
 frame_progress = 0.6346509
