@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 	pos += seg * direction
 	
 func _draw_road(color: Color, x1: float, y1: float, w1: float, x2: float, y2: float, w2: float) -> void:
-	# Definindo os 4 pontos do trapézio (A, B, C, D)
+	#definindo os 4 pontos do trapézio (A, B, C, D)
 	var a = Vector2(x1 - w1, y1)
 	var b = Vector2(x2 - w2, y2)
 	var c = Vector2(x2 + w2, y2)
@@ -126,5 +126,3 @@ func _draw() -> void:
 		_draw_road(border, p.px, p.py, p.pw*1.2, l.px, l.py, l.pw * 1.2)
 		_draw_road(road_col, p.px, p.py, p.pw, l.px, l.py, l.pw)
 		_draw_road(strip, p.px, p.py, p.pw*0.01, l.px, l.py, l.pw * 0.01)
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
