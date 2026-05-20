@@ -126,3 +126,5 @@ func _draw() -> void:
 		_draw_road(border, p.px, p.py, p.pw*1.2, l.px, l.py, l.pw * 1.2)
 		_draw_road(road_col, p.px, p.py, p.pw, l.px, l.py, l.pw)
 		_draw_road(strip, p.px, p.py, p.pw*0.01, l.px, l.py, l.pw * 0.01)
+		
+		
