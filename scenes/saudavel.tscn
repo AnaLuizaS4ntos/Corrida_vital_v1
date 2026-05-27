@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dloi8votieb1j"]
+
+[ext_resource type="Texture2D" uid="uid://ln58tgv6cxuo" path="res://assets/Icons/fruit_banana.png" id="1_yeski"]
+[ext_resource type="Texture2D" uid="uid://ys8bixwbvfbn" path="res://assets/Icons/fruit_apple.png" id="2_7nmv0"]
+[ext_resource type="Texture2D" uid="uid://b31bpd30bhj3s" path="res://assets/Icons/fruit_watermelon_slice.png" id="3_8n2ly"]
+[ext_resource type="Texture2D" uid="uid://hc1r8nd0em4w" path="res://assets/Icons/eggs_fried.png" id="4_6r4hh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nin4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yeski")
+}],
+"loop": true,
+"name": &"banana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7nmv0")
+}],
+"loop": true,
+"name": &"maca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8n2ly")
+}],
+"loop": true,
+"name": &"melancia",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6r4hh")
+}],
+"loop": true,
+"name": &"ovo",
+"speed": 5.0
+}]
+
+[node name="saudavel" type="Node2D" unique_id=600423809]
+
+[node name="frutas" type="AnimatedSprite2D" parent="." unique_id=1737942145]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nin4p")
+animation = &"melancia"
