@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcow4x5qkroac" path="res://assets/menu/Gemini_Generated_Image_zedyzczedyzczedy.png" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://bf0kwu4m27qdy" path="res://assets/menu/[7] Gold/[1] Normal.png" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://d3na84ud7jtn2" path="res://assets/menu/game_over.ttf" id="2_mhnvy"]
 
 [node name="menu" type="Node2D" unique_id=1869762556]
 
@@ -11,28 +12,43 @@ scale = Vector2(0.4177296, 0.4177296)
 texture = ExtResource("1_vjb58")
 
 [node name="ButtonStart" type="Button" parent="." unique_id=1361172093]
-offset_left = 417.0
-offset_top = 148.0
-offset_right = 623.0
-offset_bottom = 262.0
+offset_left = 135.0
+offset_top = 168.0
+offset_right = 341.0
+offset_bottom = 282.0
+theme_override_colors/font_color = Color(0.007872625, 0.009983954, 0.008218908, 1)
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 60
+text = "START"
 icon = ExtResource("2_con2f")
 flat = true
+icon_alignment = 1
 expand_icon = true
 
 [node name="ButtonOpcoes" type="Button" parent="." unique_id=351579817]
-offset_left = 417.0
-offset_top = 243.0
-offset_right = 626.3421
-offset_bottom = 354.0
+offset_left = 134.3421
+offset_top = 254.0
+offset_right = 341.79825
+offset_bottom = 364.0
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 60
+text = "OPÇOES"
 icon = ExtResource("2_con2f")
 flat = true
+icon_alignment = 1
 expand_icon = true
 
 [node name="ButtonTutorial" type="Button" parent="." unique_id=1859554785]
-offset_left = 420.0
-offset_top = 333.0
-offset_right = 626.04877
-offset_bottom = 461.0
+offset_left = 137.0
+offset_top = 330.0
+offset_right = 343.04877
+offset_bottom = 458.0
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_font_sizes/font_size = 60
+text = "TUTORIAL"
 icon = ExtResource("2_con2f")
 flat = true
+icon_alignment = 1
 expand_icon = true
