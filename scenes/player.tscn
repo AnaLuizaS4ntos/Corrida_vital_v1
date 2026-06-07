@@ -25,6 +25,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(88.75, 189)
+
 [node name="Player" type="CharacterBody2D" unique_id=478286453]
 script = ExtResource("1_g2els")
 
@@ -34,3 +37,11 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 autoplay = "default"
 frame_progress = 0.6346509
+
+[node name="DetectorDeItens" type="Area2D" parent="." unique_id=1898577736]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorDeItens" unique_id=512742685]
+position = Vector2(509, 474.5)
+shape = SubResource("RectangleShape2D_g2els")
+
+[connection signal="area_entered" from="DetectorDeItens" to="." method="_on_detector_de_itens_area_entered"]
