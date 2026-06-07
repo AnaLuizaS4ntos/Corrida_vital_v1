@@ -56,3 +56,4 @@ icon_alignment = 1
 expand_icon = true
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="ButtonTutorial" to="." method="_on_button_tutorial_pressed"]
