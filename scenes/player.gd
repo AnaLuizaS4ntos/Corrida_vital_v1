@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	# Aqui trocamos para "left" e "right", exatamente como está na imagem image_a64127.png
-	var direcao = Input.get_axis("left", "right")
+	var direcao = Input.get_axis("ui_left", "ui_right")
 	
 	if direcao:
 		# Se estiver pressionando algo, move o player no eixo X
