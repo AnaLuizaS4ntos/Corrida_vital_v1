@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bbs5p4h4yjuqf"]
+
+[ext_resource type="Script" uid="uid://cjah8vwbnkaik" path="res://scenes/barra_de_vida.gd" id="1_3dc8v"]
+
+[sub_resource type="Gradient" id="Gradient_rdopl"]
+colors = PackedColorArray(0, 0, 0, 1, 0.012617188, 0.012617188, 0.012617188, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3dc8v"]
+gradient = SubResource("Gradient_rdopl")
+width = 264
+
+[sub_resource type="Gradient" id="Gradient_lyh6f"]
+colors = PackedColorArray(0, 1, 0, 1, 0.28627452, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52rc8"]
+gradient = SubResource("Gradient_lyh6f")
+width = 264
+
+[node name="vida" type="Node2D" unique_id=125607780]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=213611758]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=895140263]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=757379216]
+offset_right = 384.0
+offset_bottom = 32.0
+max_value = 71.515
+value = 59.0
+texture_under = SubResource("GradientTexture2D_3dc8v")
+texture_progress = SubResource("GradientTexture2D_52rc8")
+script = ExtResource("1_3dc8v")
