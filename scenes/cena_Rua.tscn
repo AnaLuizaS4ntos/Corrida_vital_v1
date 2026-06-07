@@ -23,6 +23,7 @@ position = Vector2(-250, 176)
 texture = ExtResource("3_lrpq3")
 
 [node name="PixilartSprite(1)" type="Sprite2D" parent="." unique_id=1900288404]
+visible = false
 position = Vector2(366, 496)
 scale = Vector2(0.15767047, 0.15767047)
 texture = ExtResource("4_r528x")

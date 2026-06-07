@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://pbw8cywu3vn7"]
 
+[ext_resource type="Script" uid="uid://cs0780a0b6wfv" path="res://scenes/menu.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://bcow4x5qkroac" path="res://assets/menu/Gemini_Generated_Image_zedyzczedyzczedy.png" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://bf0kwu4m27qdy" path="res://assets/menu/[7] Gold/[1] Normal.png" id="2_con2f"]
 [ext_resource type="FontFile" uid="uid://d3na84ud7jtn2" path="res://assets/menu/game_over.ttf" id="2_mhnvy"]
 
 [node name="menu" type="Node2D" unique_id=1869762556]
+script = ExtResource("1_mhnvy")
 
 [node name="GeminiGeneratedImageZedyzczedyzczedy" type="Sprite2D" parent="." unique_id=932028417]
 position = Vector2(525, 281)
@@ -52,3 +54,5 @@ icon = ExtResource("2_con2f")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]

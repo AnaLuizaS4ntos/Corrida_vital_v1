@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dy8kfrve5ilx8"]
 
+[ext_resource type="Script" uid="uid://cxgd7opri17u" path="res://scenes/naosaudavel.gd" id="1_wncqy"]
 [ext_resource type="Texture2D" uid="uid://c8bwnk5v2oqst" path="res://assets/Icons/burger.png" id="1_x4or5"]
 [ext_resource type="Texture2D" uid="uid://gkd6ow7p0t5f" path="res://assets/Icons/hotdog.png" id="2_wncqy"]
 [ext_resource type="Texture2D" uid="uid://bfcq28ecec6ak" path="res://assets/Icons/soda_pepsi.png" id="3_il4k2"]
@@ -31,9 +32,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="naosaudavel" type="Node2D" unique_id=1200359669]
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4or5"]
+
+[node name="naosaudavel" type="Area2D" unique_id=1903539568]
+script = ExtResource("1_wncqy")
 
 [node name="cigarro" type="AnimatedSprite2D" parent="." unique_id=955821668]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5de0d")
 animation = &"burger"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=682761780]
+shape = SubResource("CircleShape2D_x4or5")
