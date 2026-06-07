@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://doun8xpa55uuv" path="res://scenes/saudavel.gd" id="1_7nmv0"]
 [ext_resource type="Texture2D" uid="uid://ln58tgv6cxuo" path="res://assets/Icons/fruit_banana.png" id="1_yeski"]
 [ext_resource type="Texture2D" uid="uid://ys8bixwbvfbn" path="res://assets/Icons/fruit_apple.png" id="2_7nmv0"]
+[ext_resource type="Texture2D" uid="uid://dm4vwsbur4x3c" path="res://assets/Icons/fruit_blueberry.png" id="3_6r4hh"]
 [ext_resource type="Texture2D" uid="uid://b31bpd30bhj3s" path="res://assets/Icons/fruit_watermelon_slice.png" id="3_8n2ly"]
 [ext_resource type="Texture2D" uid="uid://hc1r8nd0em4w" path="res://assets/Icons/eggs_fried.png" id="4_6r4hh"]
+[ext_resource type="Texture2D" uid="uid://c12apex8xdq4u" path="res://assets/Icons/vegetable_carrot.png" id="4_ijjga"]
+[ext_resource type="Texture2D" uid="uid://bq8dewyoxgc0w" path="res://assets/Icons/vegetable_corn.png" id="8_yo3w5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nin4p"]
 animations = [{
@@ -14,6 +17,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"banana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6r4hh")
+}],
+"loop": true,
+"name": &"blueberry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ijjga")
+}],
+"loop": true,
+"name": &"cenoura",
 "speed": 5.0
 }, {
 "frames": [{
@@ -30,6 +49,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"melancia",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yo3w5")
+}],
+"loop": true,
+"name": &"milho",
 "speed": 5.0
 }, {
 "frames": [{
