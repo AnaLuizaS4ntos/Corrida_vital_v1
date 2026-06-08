@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(73, 184.5)
+size = Vector2(73, 151)
 
 [node name="Player" type="CharacterBody2D" unique_id=478286453]
 script = ExtResource("1_g2els")
@@ -49,7 +49,7 @@ animation = &"respiro"
 [node name="DetectorDeItens" type="Area2D" parent="." unique_id=860439383]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorDeItens" unique_id=1524722784]
-position = Vector2(508.5, 475.75)
+position = Vector2(508.5, 492.5)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="vida" parent="." unique_id=125607780 instance=ExtResource("3_qhqgy")]

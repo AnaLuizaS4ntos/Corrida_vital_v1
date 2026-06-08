@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl2otafkeoyte" path="res://scr/cena_rua.gd" id="1_gpi17"]
 [ext_resource type="Texture2D" uid="uid://j3c106oa70si" path="res://assets/Captura de tela 2026-05-15 012241.png" id="1_jfhvc"]
+[ext_resource type="AudioStream" uid="uid://ba333cndg3u5t" path="res://assets/menu/tema.wav" id="4_r528x"]
 [ext_resource type="PackedScene" uid="uid://c2t3rfxbtl1hq" path="res://scenes/player.tscn" id="5_x48ou"]
 
 [node name="Pseudo_3D" type="Node2D" unique_id=711295868]
@@ -16,3 +17,7 @@ region_enabled = true
 region_rect = Rect2(0.635, 2.145, 1176, 374)
 
 [node name="Player" parent="." unique_id=1908479447 instance=ExtResource("5_x48ou")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1199662252]
+stream = ExtResource("4_r528x")
+autoplay = true

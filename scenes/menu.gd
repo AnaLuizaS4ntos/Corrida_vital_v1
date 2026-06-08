@@ -10,3 +10,5 @@ func _on_button_start_pressed() -> void:
 func _on_button_tutorial_pressed() -> void:
 	# Abre a tela explicativa do médico
 	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
+	
+	
