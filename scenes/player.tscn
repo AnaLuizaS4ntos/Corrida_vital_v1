@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://x78ngnooahto" path="res://assets/player/sprite 1 (2).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bgyht57va7b6b" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://bbs5p4h4yjuqf" path="res://scenes/barra_de_vida.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -50,5 +51,7 @@ animation = &"respiro"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorDeItens" unique_id=1524722784]
 position = Vector2(508.5, 475.75)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="vida" parent="." unique_id=125607780 instance=ExtResource("3_qhqgy")]
 
 [connection signal="area_entered" from="DetectorDeItens" to="." method="_on_detector_de_itens_area_entered"]
