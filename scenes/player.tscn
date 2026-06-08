@@ -21,7 +21,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_qhqgy")
 }],
 "loop": true,
-"name": &"default",
+"name": &"correr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"respiro",
 "speed": 5.0
 }]
 
@@ -35,7 +43,7 @@ script = ExtResource("1_g2els")
 position = Vector2(510, 477)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-frame_progress = 0.6346509
+animation = &"respiro"
 
 [node name="DetectorDeItens" type="Area2D" parent="." unique_id=860439383]
 

@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcow4x5qkroac" path="res://assets/menu/Gemini_Generated_Image_zedyzczedyzczedy.png" id="1_vjb58"]
 [ext_resource type="FontFile" uid="uid://d3na84ud7jtn2" path="res://assets/menu/game_over.ttf" id="2_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://tiykym858jf6" path="res://assets/botoes/Start/A_Start1.png" id="4_g3eks"]
-[ext_resource type="Texture2D" uid="uid://dj3rxx1pp8cgq" path="res://assets/botoes/Options/A_Options1.png" id="5_v86rl"]
-[ext_resource type="Texture2D" uid="uid://dhky5sq3he27e" path="res://assets/botoes/Info/A_Info1.png" id="6_13sgg"]
+[ext_resource type="Texture2D" uid="uid://3pyqubqdpvek" path="res://assets/botoes/A Buttons Big1.png" id="5_4ytvr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3eks"]
 texture = ExtResource("4_g3eks")
@@ -31,42 +30,46 @@ scale = Vector2(0.4177296, 0.4177296)
 texture = ExtResource("1_vjb58")
 
 [node name="ButtonStart" type="Button" parent="." unique_id=1361172093]
-offset_left = 26.0
-offset_top = 153.0
-offset_right = 457.78946
-offset_bottom = 389.0
-theme_override_colors/font_color = Color(0.007872625, 0.009983954, 0.008218908, 1)
+offset_left = 90.0
+offset_top = 160.0
+offset_right = 412.01248
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.78039217, 1)
 theme_override_fonts/font = ExtResource("2_mhnvy")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_g3eks")
 button_mask = 3
-icon = ExtResource("4_g3eks")
+text = "START"
+icon = ExtResource("5_4ytvr")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="ButtonOpcoes" type="Button" parent="." unique_id=351579817]
-offset_left = 129.0
-offset_top = 320.0
-offset_right = 362.85965
-offset_bottom = 444.0
-theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+offset_left = 93.0
+offset_top = 260.0
+offset_right = 413.61404
+offset_bottom = 430.0
+theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.78039217, 1)
 theme_override_fonts/font = ExtResource("2_mhnvy")
 theme_override_font_sizes/font_size = 60
-icon = ExtResource("5_v86rl")
+text = "TUTORIAL
+"
+icon = ExtResource("5_4ytvr")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="ButtonTutorial" type="Button" parent="." unique_id=1859554785]
-offset_left = 142.0
-offset_top = 397.0
-offset_right = 346.43903
-offset_bottom = 524.0
-theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+offset_left = 94.0
+offset_top = 343.0
+offset_right = 412.73172
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0.9607843, 0.92941177, 0.78039217, 1)
 theme_override_fonts/font = ExtResource("2_mhnvy")
 theme_override_font_sizes/font_size = 60
-icon = ExtResource("6_13sgg")
+text = "INFO"
+icon = ExtResource("5_4ytvr")
 flat = true
 icon_alignment = 1
 expand_icon = true

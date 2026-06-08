@@ -33,3 +33,5 @@ value = 59.0
 texture_under = SubResource("GradientTexture2D_3dc8v")
 texture_progress = SubResource("GradientTexture2D_52rc8")
 script = ExtResource("1_3dc8v")
+
+[node name="Player2" type="Node2D" parent="." unique_id=1003673588]

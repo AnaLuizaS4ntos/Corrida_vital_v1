@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://u1qwyxe03w1p"]
+
+[ext_resource type="Texture2D" uid="uid://33f4vhmrphyh" path="res://barra_vida_vazia.tres" id="1_8p7w8"]
+[ext_resource type="Texture2D" uid="uid://dlsvkoxhvqy82" path="res://barra_vida_cheia.tres" id="2_6e618"]
+[ext_resource type="Script" uid="uid://k5g1kstkb1ja" path="res://barradevida.gd" id="3_dvf4i"]
+[ext_resource type="FontFile" uid="uid://5w4yjjto78ef" path="res://Abaddon_Fonts/Abaddon-Bold.ttf" id="4_ffe5h"]
+[ext_resource type="Script" uid="uid://bbiv6j233md35" path="res://vidaProgresso.gd" id="5_dmg6m"]
+
+[node name="SistemaVida2" type="Node2D" unique_id=384525062]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1884361018]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=138659138 node_paths=PackedStringArray("vidaProgresso")]
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 0.78700006
+anchor_right = 0.22500001
+anchor_bottom = 0.87500006
+offset_left = 0.55999756
+offset_top = 0.35998535
+offset_right = -215.0
+offset_bottom = -52.50006
+scale = Vector2(6, 6)
+value = 60.0
+texture_under = ExtResource("1_8p7w8")
+texture_progress = ExtResource("2_6e618")
+script = ExtResource("3_dvf4i")
+vidaProgresso = NodePath("../../Player23")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1683117243]
+offset_left = 78.0
+offset_top = 588.0
+offset_right = 123.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("4_ffe5h")
+theme_override_font_sizes/font_size = 22
+text = "Life"
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Player23" type="Node2D" parent="." unique_id=2104595382]
+script = ExtResource("5_dmg6m")
